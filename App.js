@@ -1,5 +1,6 @@
 import React from 'react';
 import type {Node} from 'react';
+import {Searchbar} from 'react-native-paper';
 import {
   SafeAreaView,
   StatusBar,
@@ -22,6 +23,7 @@ const App: () => Node = () => {
         </Text>
         <View style={styles.search}>
           <Text>search</Text>
+          <Searchbar />
         </View>
         <View style={styles.list}>
           <Text>lists</Text>

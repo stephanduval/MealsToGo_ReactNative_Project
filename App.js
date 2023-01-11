@@ -2,11 +2,9 @@ import React from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   Platform,
 } from 'react-native';
@@ -16,21 +14,16 @@ const isAndroid = Platform.OS === 'android';
 const App: () => Node = () => {
   return (
     <>
-      <SafeAreaView
-        style={{
-          flex: 1,
-          backgroundColor: 'orange',
-          marginTop: isAndroid ? StatusBar.currentHeight : 0,
-        }}>
+      <SafeAreaView style={styles.container}>
         <Text>
           {' '}
           Above gap is Temporary place-Holder to Android StatusBar Which was
           implemented automatically
         </Text>
-        <View style={{padding: 16, backgroundColor: 'green'}}>
+        <View style={styles.search}>
           <Text>search</Text>
         </View>
-        <View style={{flex: 1, padding: 16, backgroundColor: 'blue'}}>
+        <View style={styles.list}>
           <Text>lists</Text>
         </View>
       </SafeAreaView>
@@ -38,6 +31,21 @@ const App: () => Node = () => {
     </>
   );
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'orange',
+    marginTop: isAndroid ? StatusBar.currentHeight : 0,
+  },
+  search: {
+    padding: 16,
+    backgroundColor: 'green',
+  },
+  list: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: 'blue',
+  },
+});
 
 export default App;
